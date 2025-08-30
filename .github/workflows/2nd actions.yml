@@ -1,11 +1,28 @@
 name: 2nd action test
 on: workflow_dispatch
+ inputs:
+  environment:
+   description: 'Deployment Environment'
+   required: true
+   default: 'staging'
+   type: choice
+   options:
+   - 'staging'
+   - 'production'
+  release_version:
+   description: 'Release Version'
+   required: false
+   type: string
+    
 jobs:
  test: 
   runs-on: ubuntu-latest
   steps: 
    - name: get code
      uses: actions/checkout@v5
+
+   - name: Deploy to ${{ github.event.inputs.environment }}
+     run: echo "Deploying version ${{ github.event.inputs.release_version }} to ${{ github.event.inputs.environment }}"
 
    - name: install Node js
      uses: actions/setup-node@v4
