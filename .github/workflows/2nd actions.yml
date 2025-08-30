@@ -42,3 +42,6 @@ jobs:
    - name: deploy
      run: echo "deploying the program build to the server"
 
+   - name: Patrick Mendoza
+     run: echo "watching tutorial for github actions"
+
