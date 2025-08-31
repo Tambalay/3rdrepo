@@ -6,10 +6,7 @@ jobs:
   steps: 
    - name: get code
      uses: actions/checkout@v5
-
-   - name: Deploy to ${{ github.event.inputs.environment }}
-     run: echo "Deploying version ${{ github.event.inputs.release_version }} to ${{ github.event.inputs.environment }}"
-
+     
    - name: install Node js
      uses: actions/setup-node@v4
      with:
