@@ -1,18 +1,5 @@
 name: 2nd action test
 on: workflow_dispatch
- inputs:
-  environment:
-   description: 'Deployment Environment'
-   required: true
-   default: 'staging'
-   type: choice
-   options:
-   - 'staging'
-   - 'production'
-  release_version:
-   description: 'Release Version'
-   required: false
-   type: string 
 jobs:
  test: 
   runs-on: ubuntu-latest
